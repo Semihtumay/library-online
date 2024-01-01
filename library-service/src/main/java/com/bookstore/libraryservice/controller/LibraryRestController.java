@@ -3,6 +3,8 @@ package com.bookstore.libraryservice.controller;
 import com.bookstore.libraryservice.dto.AddBookRequest;
 import com.bookstore.libraryservice.dto.LibraryDto;
 import com.bookstore.libraryservice.service.LibraryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/v1/library")
 public class LibraryRestController {
     private final LibraryService libraryService;
+    Logger logger = LoggerFactory.getLogger(LibraryRestController.class);
+
 
     public LibraryRestController(LibraryService libraryService) {
         this.libraryService = libraryService;
